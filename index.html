@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>博客</title>
+  </head>
+  <body>
+    <div id="login-wrap" class="login-wrap">
+      <a href="https://github.com/yaojin2070">
+        <i class="iconfont icon-github"></i>
+      </a>
+      <div class="login-content">
+        <div class="login-form">
+          <p>Hello, World</p>
+          <p id="time"></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<link
+  rel="stylesheet"
+  href="http://at.alicdn.com/t/font_2374885_tw9nmvnlnt8.css"
+  type="text/css"
+/>
+<script src="./snowstorm.js"></script>
+<script>
+  const storm = new snowStorm({
+    flakeWidth: 30,
+    flakeHeight: 30,
+    flakesMax: 10,
+    snowStick: false,
+    followMouse: false,
+    vMaxY: 3,
+    animationInterval: 100,
+    snowComponent: "<img id='imgLogo' src='./hb.png' />",
+  });
+  storm.doStart();
+  function getDistanceSpecifiedTime(dateTime) {
+    // 指定日期和时间
+    var EndTime = new Date(dateTime);
+    // 当前系统时间
+    var NowTime = new Date();
+    var t = EndTime.getTime() - NowTime.getTime();
+    var d = Math.floor(t / 1000 / 60 / 60 / 24);
+    var h = Math.floor((t / 1000 / 60 / 60) % 24);
+    var m = Math.floor((t / 1000 / 60) % 60);
+    var s = Math.floor((t / 1000) % 60);
+    return -d + " days";
+  }
+  const time = getDistanceSpecifiedTime(new Date("2018-10-18").getTime());
+  document.getElementById("time").innerHTML = time;
+</script>
+<style>
+  body,
+  html {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .login-wrap {
+    background-image: url("http://test.yjdzm.com/bg01.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .logo {
+    text-align: center;
+  }
+
+  .logo img {
+    width: 100px;
+    margin: 30px 0 0;
+  }
+
+  .logo p {
+    text-align: center;
+    margin-top: 15px;
+    color: #0084ff;
+    font-size: 22px;
+  }
+  .login-content {
+    width: 100%;
+  }
+  .login-form {
+    padding: 0 40px;
+    text-align: center;
+    font-size: 40px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  #imgLogo {
+    width: 30px;
+  }
+  @font-face {
+    font-family: "myFont1";
+    src: url("./341c6a5085cbcbb5bb5d0287fe9310b9.ttf");
+  }
+
+  * {
+    font-family: "myFont1";
+  }
+  .icon-github {
+    color: black;
+    top: 10%;
+    right: 12%;
+  }
+  .iconfont {
+    font-size: 30px;
+    position: absolute;
+    cursor: pointer;
+  }
+  a:active {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    -webkit-user-select: none;
+    -moz-user-focus: none;
+    -moz-user-select: none;
+  }
+  a {
+    outline: none;
+    text-decoration: none;
+  }
+  .test{
+    display: none;
+  }
+</style>
