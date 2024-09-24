@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>博客</title>
-  </head>
-  <body>
-    <div id="login-wrap" class="login-wrap">
-      <a href="https://github.com/yaojin2070">
-        <i class="iconfont icon-github"></i>
-      </a>
-      <div class="login-content">
-        <div class="login-form">
-          <p>Hello, World</p>
-          <p id="time"></p>
-        </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>博客</title>
+</head>
+
+<body>
+  <div id="login-wrap" class="login-wrap">
+    <a href="https://github.com/zmcode">
+      <i class="iconfont icon-github"></i>
+    </a>
+    <div class="login-content">
+      <div class="login-form">
+        <p>Hello, World</p>
+        <p id="time"></p>
+        <a class="btn" href="http://175.178.183.94:8088/" target="_blank">example</a>
       </div>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>
-<link
-  rel="stylesheet"
-  href="http://at.alicdn.com/t/font_2374885_tw9nmvnlnt8.css"
-  type="text/css"
-/>
+<link rel="stylesheet" href="http://at.alicdn.com/t/font_2374885_tw9nmvnlnt8.css" type="text/css" />
 <script src="./snowstorm.js"></script>
 <script>
   const storm = new snowStorm({
@@ -52,6 +52,7 @@
   }
   const time = getDistanceSpecifiedTime(new Date("2018-10-18").getTime());
   document.getElementById("time").innerHTML = time;
+
 </script>
 <style>
   body,
@@ -61,8 +62,9 @@
     margin: 0;
     padding: 0;
   }
+
   .login-wrap {
-    background-image: url("http://test.yjdzm.com/bg01.jpg");
+    background-image: url("./bg01.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
@@ -72,6 +74,7 @@
     justify-content: center;
     align-items: center;
   }
+
   .logo {
     text-align: center;
   }
@@ -87,19 +90,39 @@
     color: #0084ff;
     font-size: 22px;
   }
+
   .login-content {
     width: 100%;
   }
+
   .login-form {
     padding: 0 40px;
     text-align: center;
     font-size: 40px;
     width: 100%;
     box-sizing: border-box;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
+
+
+  .login-form p {
+    margin: 10px 0;
+  }
+
+  .login-form .btn {
+    color: #116ACC;
+    cursor: pointer;
+
+  }
+
   #imgLogo {
     width: 30px;
   }
+
   @font-face {
     font-family: "myFont1";
     src: url("./341c6a5085cbcbb5bb5d0287fe9310b9.ttf");
@@ -108,27 +131,32 @@
   * {
     font-family: "myFont1";
   }
+
   .icon-github {
     color: black;
     top: 10%;
     right: 12%;
   }
+
   .iconfont {
     font-size: 30px;
     position: absolute;
     cursor: pointer;
   }
+
   a:active {
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
     -webkit-user-select: none;
     -moz-user-focus: none;
     -moz-user-select: none;
   }
+
   a {
     outline: none;
     text-decoration: none;
   }
-  .test{
+
+  .test {
     display: none;
   }
 </style>
